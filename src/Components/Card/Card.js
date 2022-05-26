@@ -1,20 +1,13 @@
 import * as React from "react";
 import { StyledDiv, StyledB } from "../../Utils";
-import { useDispatch, useSelector } from "react-redux";
-import { getApiAction } from "../../Services/Redux/Actions";
 
-export const Card = () => {
-  const dispatch = useDispatch();
-  const posts = useSelector((state) => state.apiState.apiData);
-
-  React.useEffect(() => {
-    dispatch(getApiAction());
-  }, [dispatch]);
+export const Card = (props) => {
+  const { dataList } = props;
 
   return (
     <StyledDiv className="card__wrapper">
-      {posts &&
-        posts.map((post) => {
+      {dataList &&
+        dataList.map((post) => {
           return (
             <StyledDiv className="card" key={post.id}>
               <StyledDiv className="card__header">

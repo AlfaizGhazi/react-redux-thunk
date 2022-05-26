@@ -42,6 +42,12 @@ export const StyledDiv = styled.div`
     margin: 5px;
     padding: 3px;
   }
+
+  &.home__buttonbar {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+  }
 `;
 
 export const StyledSpan = styled.span``;

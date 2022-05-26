@@ -15,3 +15,19 @@ export const getApiAction = () => {
     });
   };
 };
+
+export const filterByOneAction = (filteredId) => {
+  return async (dispatch, getState) => {
+    const apiResponse = await axios.get(baseURL);
+    const apiData = apiResponse.data;
+    const filteredByOneData = apiData.filter(
+      (data) => filteredId === data.userId
+    );
+    dispatch({
+      type: ACTION_TYPES.API.FILTER.USER_ONE,
+      payload: {
+        data: filteredByOneData,
+      },
+    });
+  };
+};

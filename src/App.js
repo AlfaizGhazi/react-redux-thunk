@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { Card } from "./Components";
+import { Home } from "./Screens";
 
 import { StyledDiv } from "./Utils";
 
 const App = () => {
   return (
     <StyledDiv className="app">
-      <Card />
+      <Home />
     </StyledDiv>
   );
 };
